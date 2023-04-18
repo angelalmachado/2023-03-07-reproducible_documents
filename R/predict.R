@@ -1,4 +1,13 @@
-library(testthat)
+
+#' Classify penguin
+#'
+#' @param bill_length
+#' @param flipper_length
+#'
+#' @return A string with the penguin's classification
+#' @export
+#'
+#' @examples classify_penguin(10, 270)
 
 classify_penguin <- function(bill_length, flipper_length) {
   if (flipper_length > 205) {
@@ -11,7 +20,3 @@ classify_penguin <- function(bill_length, flipper_length) {
     }
   }
 }
-
-stopifnot(classify_penguin(40, 210) == "Gentoo")
-expect_equal(classify_penguin(40, 210), "Gentoo")
-expect_equal(classify_penguin(40, 200), "Adelle")
