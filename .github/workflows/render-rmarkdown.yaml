@@ -22,11 +22,8 @@ jobs:
 
       - uses: r-lib/actions/setup-r@v2
 
-      - name: CRAN setup
-        run: RUN Rscript -e "install.packages('remotes', repos = c(CRAN = 'https://cloud.r-project.org'))"
-
       - name: Install rmarkdown
-        run: Rscript -e "install.packages('rmarkdown')"
+        run: Rscript -e "install.packages('rmarkdown', repos = c(CRAN = 'https://cloud.r-project.org'))"
 
       - name: Render Rmarkdown files and Commit Results
         run: Rscript -e "rmarkdown::render('analysis/penguins.Rmd', output_dir = here::here('output'))"
